@@ -1,0 +1,36 @@
+{
+    "firebot-slots": {
+        "active": false,
+        "settings": {
+            "currencySettings": {
+                "currencyId": "4c05d09b-bfb4-413a-835d-834bba9dbc03",
+                "defaultWager": 10
+            },
+            "spinSettings": {
+                "successChances": {
+                    "basePercent": 35,
+                    "roles": []
+                },
+                "multiplier": 1
+            },
+            "cooldownSettings": {
+                "cooldown": 300
+            },
+            "generalMessages": {
+                "alreadySpinning": "{username}, your slot machine is actively working!",
+                "onCooldown": "{username}, your slot machine is currently on cooldown. Time remaining: {timeRemaining}",
+                "noWagerAmount": "{user}, please include a wager amount!",
+                "invalidWagerAmount": "{user}, please include a valid wager amount!",
+                "moreThanZero": "{username}, your wager amount must be more than 0.",
+                "minWager": "{username}, your wager amount must be at least {minWager}.",
+                "maxWager": "{username}, your wager amount can be no more than {maxWager}.",
+                "notEnough": "{username}, you don't have enough to wager this amount!",
+                "spinInAction": "{username} pulls back the lever...",
+                "spinSuccessful": "{username} hit {successfulRolls} out of 3 and won {winningsAmount} {currencyName}!"
+            },
+            "chatSettings": {
+                "chatter": "Bot"
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "4c05d09b-bfb4-413a-835d-834bba9dbc03": {
+        "id": "4c05d09b-bfb4-413a-835d-834bba9dbc03",
+        "name": "Boing",
+        "active": true,
+        "payout": 5,
+        "interval": 5,
+        "limit": 0,
+        "transfer": "Allow",
+        "bonus": {
+            "vip": 1,
+            "mod": null
+        }
+    }
+}

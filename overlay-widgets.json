@@ -1,0 +1,29 @@
+{
+    "5a6cdf95-717d-4c85-a07a-a63c169a34bd": {
+        "id": "5a6cdf95-717d-4c85-a07a-a63c169a34bd",
+        "name": "Combo Words",
+        "type": "firebot:custom",
+        "active": false,
+        "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1280,
+            "height": 720
+        },
+        "entryAnimation": {
+            "class": "none"
+        },
+        "exitAnimation": {
+            "class": "none"
+        },
+        "overlayInstance": null,
+        "settings": {
+            "html": "\n<div>\n  <style>\n  </style>\n  \n</div>",
+            "onShowJs": "",
+            "onStateUpdateJs": "",
+            "onMessageJs": ""
+        },
+        "state": {},
+        "sortTags": []
+    }
+}

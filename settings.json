@@ -1,0 +1,74 @@
+{
+    "settings": {
+        "legacySortTagsImported": true,
+        "firstTimeUse": false,
+        "defaultTtsVoiceId": {},
+        "audioOutputDevice": {
+            "label": "Send To Overlay",
+            "deviceId": "overlay"
+        },
+        "theme": "PurpleSky",
+        "sounds": "Off",
+        "showUptimeStat": true,
+        "showViewerCountStat": false,
+        "showHypeTrainIndicator": false,
+        "showAdBreakIndicator": false,
+        "activeChatUsers": {
+            "inactiveTimer": 60
+        },
+        "sidebarExpanded": false,
+        "quickActions": {
+            "firebot:give-currency": {
+                "enabled": true,
+                "position": 0
+            },
+            "firebot:stream-info": {
+                "enabled": true,
+                "position": 1
+            },
+            "firebot:stream-preview": {
+                "enabled": true,
+                "position": 2
+            },
+            "firebot:open-reward-request-queue": {
+                "enabled": true,
+                "position": 3
+            }
+        },
+        "seenAdvancedCommandModePopup": true,
+        "defaultToAdvancedCommandMode": true,
+        "allowCommandsInSharedChat": true,
+        "dashboard": {
+            "layout": {
+                "dashboardViewerList": "19.863585746102448%",
+                "dashboardChatWindow": "42.74084124830394%",
+                "dashboardActivityFeed": "30.069063772048853%"
+            }
+        },
+        "chat": {
+            "emotes": {
+                "bttv": true
+            },
+            "tagged": {
+                "sound": {
+                    "name": "Ping"
+                }
+            }
+        },
+        "chatCompactMode": true,
+        "chatCustomFontFamilyEnabled": true,
+        "useOverlayInstances": true,
+        "overlayInstances": [
+            "chatCombo"
+        ],
+        "justUpdated": false,
+        "eventSetSettings": {
+            "74229c87-709f-4b05-9688-ce8b13fb091a": {
+                "position": 0
+            }
+        },
+        "chatCustomFontSize": 17,
+        "chatGetAllEmotes": true,
+        "runCustomScripts": true
+    }
+}

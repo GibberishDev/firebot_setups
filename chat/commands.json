@@ -1,0 +1,1530 @@
+{
+    "systemCommandOverrides": {
+        "firebot:commandmanagement": {
+            "id": "firebot:commandmanagement",
+            "name": "Command Management",
+            "active": false,
+            "trigger": "!command",
+            "description": "Allows custom command management via chat.",
+            "autoDeleteTrigger": false,
+            "scanWholeMessage": false,
+            "cooldown": {
+                "user": 0,
+                "global": 0
+            },
+            "restrictionData": {
+                "restrictions": [
+                    {
+                        "id": "sys-cmd-mods-only-perms",
+                        "type": "firebot:permissions",
+                        "mode": "roles",
+                        "roleIds": [
+                            "broadcaster",
+                            "mod"
+                        ]
+                    }
+                ]
+            },
+            "subCommands": [
+                {
+                    "arg": "add",
+                    "usage": "add [!trigger or \"phrase\"] [message]",
+                    "description": "Adds a new command with a given response message.",
+                    "active": true
+                },
+                {
+                    "arg": "response",
+                    "usage": "response [!trigger or \"phrase\"] [message]",
+                    "description": "Updates the response message for a command. Only works for commands that have 1 or less chat effects.",
+                    "active": true
+                },
+                {
+                    "arg": "setcount",
+                    "usage": "setcount [!trigger or \"phrase\"] count#",
+                    "description": "Updates the commands usage count.",
+                    "minArgs": 3,
+                    "active": true
+                },
+                {
+                    "arg": "cooldown",
+                    "usage": "cooldown [!trigger or \"phrase\"] [globalCooldownSecs] [userCooldownSecs]",
+                    "description": "Change the cooldown for a command.",
+                    "active": true
+                },
+                {
+                    "arg": "restrict",
+                    "usage": "restrict [!trigger or \"phrase\"] [All/Sub/Mod/Streamer/Custom Group]",
+                    "description": "Update permissions for a command.",
+                    "active": true
+                },
+                {
+                    "arg": "remove",
+                    "usage": "remove [!trigger or \"phrase\"]",
+                    "description": "Removes the given command.",
+                    "active": true
+                },
+                {
+                    "arg": "description",
+                    "usage": "description [!trigger or \"phrase\"]",
+                    "description": "Updates the description for a command.",
+                    "minArgs": 3,
+                    "active": true
+                },
+                {
+                    "arg": "enable",
+                    "usage": "enable [!trigger or \"phrase\"]",
+                    "description": "Enables the given custom command.",
+                    "active": true
+                },
+                {
+                    "arg": "disable",
+                    "usage": "disable [!trigger or \"phrase\"]",
+                    "description": "Disables the given custom command.",
+                    "active": true
+                },
+                {
+                    "arg": "addalias",
+                    "usage": "addalias [!trigger or \"phrase\"] !alias",
+                    "description": "Adds the specified alias to the given custom command.",
+                    "active": true
+                },
+                {
+                    "arg": "removealias",
+                    "usage": "removealias [!trigger or \"phrase\"] !alias",
+                    "description": "Removed the specified alias from the given custom command.",
+                    "active": true
+                }
+            ],
+            "type": "system"
+        },
+        "firebot:create-marker": {
+            "id": "firebot:create-marker",
+            "name": "Create Stream Marker",
+            "active": false,
+            "trigger": "!marker",
+            "usage": "[marker name]",
+            "description": "Create a stream marker.",
+            "autoDeleteTrigger": false,
+            "scanWholeMessage": false,
+            "minArgs": 1,
+            "cooldown": {
+                "user": 0,
+                "global": 0
+            },
+            "restrictionData": {
+                "restrictions": [
+                    {
+                        "id": "sys-cmd-mods-only-perms",
+                        "type": "firebot:permissions",
+                        "mode": "roles",
+                        "roleIds": [
+                            "mod",
+                            "broadcaster"
+                        ]
+                    }
+                ]
+            },
+            "options": {
+                "successTemplate": {
+                    "type": "string",
+                    "title": "Output Template",
+                    "description": "The chat message to send when the marker is created.",
+                    "tip": "Variables: {timestamp}",
+                    "default": "Marker created at {timestamp}.",
+                    "useTextArea": true
+                },
+                "unableTemplate": {
+                    "type": "string",
+                    "title": "Unable Output Template",
+                    "description": "The chat message to send a marker is unable to be created.",
+                    "default": "Unable to create a stream marker.",
+                    "useTextArea": true
+                },
+                "errorTemplate": {
+                    "type": "string",
+                    "title": "Error Output Template",
+                    "description": "The chat message to send when there was an error creating a marker.",
+                    "default": "Failed to create a stream marker.",
+                    "useTextArea": true
+                }
+            },
+            "type": "system"
+        },
+        "firebot:role-management": {
+            "id": "firebot:role-management",
+            "name": "Custom Role Management",
+            "active": false,
+            "trigger": "!role",
+            "description": "Allows management of viewer's custom roles from chat.",
+            "autoDeleteTrigger": false,
+            "scanWholeMessage": false,
+            "cooldown": {
+                "user": 0,
+                "global": 0
+            },
+            "restrictionData": {
+                "restrictions": [
+                    {
+                        "id": "sys-cmd-mods-only-perms",
+                        "type": "firebot:permissions",
+                        "mode": "roles",
+                        "roleIds": [
+                            "broadcaster"
+                        ]
+                    }
+                ]
+            },
+            "subCommands": [
+                {
+                    "arg": "add",
+                    "usage": "add @viewer roleName",
+                    "description": "Adds a custom role to a viewer.",
+                    "minArgs": 3,
+                    "active": true
+                },
+                {
+                    "arg": "remove",
+                    "usage": "remove @viewer roleName",
+                    "description": "Removes a custom role from a viewer.",
+                    "minArgs": 3,
+                    "active": true
+                },
+                {
+                    "arg": "list",
+                    "usage": "list [@viewer]",
+                    "description": "List all custom roles, or just roles a viewer has.",
+                    "active": true
+                }
+            ],
+            "type": "system"
+        },
+        "firebot:quotesmanagement": {
+            "id": "firebot:quotesmanagement",
+            "name": "Quotes Management",
+            "active": false,
+            "trigger": "!quote",
+            "description": "Allows quote management via chat.",
+            "autoDeleteTrigger": false,
+            "scanWholeMessage": false,
+            "cooldown": {
+                "user": 0,
+                "global": 0
+            },
+            "baseCommandDescription": "Display a random quote",
+            "options": {
+                "quoteDisplayTemplate": {
+                    "type": "string",
+                    "title": "Quote Display Template",
+                    "description": "How quotes are displayed in chat.",
+                    "tip": "Variables: {id}, {text}, {author}, {game}, {date}",
+                    "default": "Quote {id}: \"{text}\" - @{author} [{game}] [{date}]",
+                    "useTextArea": true
+                },
+                "quoteDateFormat": {
+                    "type": "enum",
+                    "title": "Quote Date Format",
+                    "description": "How dates should be formatted for the '!quote' and '!quote editdate' commands.",
+                    "options": [
+                        "MM/DD/YYYY",
+                        "DD/MM/YYYY"
+                    ],
+                    "default": "MM/DD/YYYY"
+                },
+                "useTTS": {
+                    "type": "boolean",
+                    "title": "Read Quotes via TTS",
+                    "description": "Have quotes read by TTS whenever one is created or looked up.",
+                    "default": false
+                },
+                "defaultStreamerAttribution": {
+                    "type": "boolean",
+                    "title": "Attribute new quote to streamer if nobody is explicitly tagged with @",
+                    "description": "If @username is not included when adding a quote, it is attributed to the streamer.",
+                    "default": false
+                }
+            },
+            "subCommands": [
+                {
+                    "id": "quotelookup",
+                    "arg": "\\d+",
+                    "regex": true,
+                    "usage": "[quoteId]",
+                    "description": "Displays the quote with the given ID.",
+                    "active": true
+                },
+                {
+                    "arg": "add",
+                    "usage": "add [@username] [quoteText]",
+                    "description": "Adds a new quote.",
+                    "restrictionData": {
+                        "restrictions": [
+                            {
+                                "id": "sys-cmd-mods-only-perms",
+                                "type": "firebot:permissions",
+                                "mode": "roles",
+                                "roleIds": [
+                                    "mod",
+                                    "broadcaster"
+                                ]
+                            }
+                        ]
+                    },
+                    "active": true
+                },
+                {
+                    "arg": "remove",
+                    "usage": "remove [quoteId]",
+                    "description": "Removes a quote using its id.",
+                    "restrictionData": {
+                        "restrictions": [
+                            {
+                                "id": "sys-cmd-mods-only-perms",
+                                "type": "firebot:permissions",
+                                "mode": "roles",
+                                "roleIds": [
+                                    "mod",
+                                    "broadcaster"
+                                ]
+                            }
+                        ]
+                    },
+                    "active": true
+                },
+                {
+                    "arg": "edittext",
+                    "usage": "edittext [quoteId] [newText]",
+                    "description": "Edit the text given quote.",
+                    "restrictionData": {
+                        "restrictions": [
+                            {
+                                "id": "sys-cmd-mods-only-perms",
+                                "type": "firebot:permissions",
+                                "mode": "roles",
+                                "roleIds": [
+                                    "mod",
+                                    "broadcaster"
+                                ]
+                            }
+                        ]
+                    },
+                    "active": true
+                },
+                {
+                    "arg": "edituser",
+                    "usage": "edituser [quoteId] [newUsername]",
+                    "description": "Edit the user of the given quote.",
+                    "restrictionData": {
+                        "restrictions": [
+                            {
+                                "id": "sys-cmd-mods-only-perms",
+                                "type": "firebot:permissions",
+                                "mode": "roles",
+                                "roleIds": [
+                                    "mod",
+                                    "broadcaster"
+                                ]
+                            }
+                        ]
+                    },
+                    "active": true
+                },
+                {
+                    "arg": "editgame",
+                    "usage": "editgame [quoteId] [newGame]",
+                    "minArgs": 3,
+                    "description": "Edit the game of the given quote.",
+                    "restrictionData": {
+                        "restrictions": [
+                            {
+                                "id": "sys-cmd-mods-only-perms",
+                                "type": "firebot:permissions",
+                                "mode": "roles",
+                                "roleIds": [
+                                    "mod",
+                                    "broadcaster"
+                                ]
+                            }
+                        ]
+                    },
+                    "active": true
+                },
+                {
+                    "arg": "editdate",
+                    "usage": "editdate [quoteId] [newDate]",
+                    "minArgs": 3,
+                    "description": "Edit the date of the given quote.",
+                    "restrictionData": {
+                        "restrictions": [
+                            {
+                                "id": "sys-cmd-mods-only-perms",
+                                "type": "firebot:permissions",
+                                "mode": "roles",
+                                "roleIds": [
+                                    "mod",
+                                    "broadcaster"
+                                ]
+                            }
+                        ]
+                    },
+                    "active": true
+                },
+                {
+                    "arg": "list",
+                    "usage": "list",
+                    "description": "Gives a link that lists out all quotes.",
+                    "active": true
+                },
+                {
+                    "arg": "search",
+                    "usage": "search [searchTerm]",
+                    "minArgs": 2,
+                    "description": "Gives a random quote using the search term(s).",
+                    "active": true
+                },
+                {
+                    "arg": "searchuser",
+                    "usage": "searchuser @username",
+                    "minArgs": 2,
+                    "description": "Gives a random quote said by the given user.",
+                    "active": true
+                },
+                {
+                    "arg": "searchdate",
+                    "usage": "searchdate DD MM YYYY",
+                    "minArgs": 3,
+                    "description": "Gives a random quote at the given date.",
+                    "active": true
+                },
+                {
+                    "arg": "searchgame",
+                    "usage": "searchgame [searchTerm]",
+                    "minArgs": 2,
+                    "description": "Gives a random quote at the given game.",
+                    "active": true
+                }
+            ],
+            "type": "system"
+        },
+        "firebot:spamRaidProtection": {
+            "id": "firebot:spamRaidProtection",
+            "name": "Spam Raid Protection",
+            "active": false,
+            "hidden": false,
+            "trigger": "!spamraidprotection",
+            "description": "Toggles protective measures such as follow-only mode, slow mode, etc.",
+            "autoDeleteTrigger": false,
+            "scanWholeMessage": false,
+            "cooldown": {
+                "user": 0,
+                "global": 30
+            },
+            "restrictionData": {
+                "restrictions": [
+                    {
+                        "id": "sys-cmd-mods-only-perms",
+                        "type": "firebot:permissions",
+                        "mode": "roles",
+                        "roleIds": [
+                            "broadcaster",
+                            "mod"
+                        ]
+                    }
+                ]
+            },
+            "options": {
+                "displayTemplate": {
+                    "type": "string",
+                    "title": "Output Template",
+                    "description": "A message that will tell the users what is going on",
+                    "default": "We are currently experiencing a spam raid, and have therefore temporarily turned on protective measures.",
+                    "useTextArea": true
+                },
+                "enableFollowerOnly": {
+                    "type": "boolean",
+                    "title": "Follower only mode",
+                    "description": "Allows you to restrict chat to all or some of your followers, based on how long they’ve followed (0 minutes to 3 months).",
+                    "default": false
+                },
+                "enableFollowerOnlyDuration": {
+                    "type": "string",
+                    "title": "Follower only mode duration (formats: 1m / 1h / 1d / 1w / 1mo)",
+                    "description": "Allows you to restrict chat to all or some of your followers, based on how long they’ve followed (0 minutes to 3 months).",
+                    "default": "15m"
+                },
+                "enableEmoteOnly": {
+                    "type": "boolean",
+                    "title": "Emote only mode",
+                    "description": "Chatters can only chat with Twitch emotes.",
+                    "default": false
+                },
+                "enableSubscriberOnly": {
+                    "type": "boolean",
+                    "title": "Subscriber only mode",
+                    "description": "Only subscribers to the channel are allowed to chat.",
+                    "default": false
+                },
+                "enableSlowMode": {
+                    "type": "boolean",
+                    "title": "Slow mode",
+                    "description": "In slow mode, users can only post one chat message every x seconds.",
+                    "default": false
+                },
+                "enableSlowModeDelay": {
+                    "type": "number",
+                    "title": "Slow mode delay in seconds",
+                    "description": "In slow mode, users can only post one chat message every x seconds.",
+                    "default": 30
+                },
+                "clearChat": {
+                    "type": "boolean",
+                    "title": "Clear chat",
+                    "description": "The chat will be cleared.",
+                    "default": true
+                },
+                "blockRaiders": {
+                    "type": "boolean",
+                    "title": "Block raiders",
+                    "description": "Block every user that posted the raid message.",
+                    "default": true
+                },
+                "banRaiders": {
+                    "type": "boolean",
+                    "title": "Ban raiders",
+                    "description": "Ban every user that posted the raid message from your channel.",
+                    "default": true
+                }
+            },
+            "subCommands": [
+                {
+                    "arg": "off",
+                    "usage": "off",
+                    "description": "Turn off the protection command.",
+                    "restrictionData": {
+                        "restrictions": [
+                            {
+                                "id": "sys-cmd-mods-only-perms",
+                                "type": "firebot:permissions",
+                                "mode": "roles",
+                                "roleIds": [
+                                    "broadcaster",
+                                    "mod"
+                                ]
+                            }
+                        ]
+                    },
+                    "active": true
+                }
+            ],
+            "type": "system"
+        },
+        "firebot:steam": {
+            "id": "firebot:steam",
+            "name": "Steam Search",
+            "active": true,
+            "trigger": "!steam",
+            "usage": "[game name]",
+            "description": "Displays information about a game on Steam.",
+            "autoDeleteTrigger": false,
+            "scanWholeMessage": false,
+            "cooldown": {
+                "user": 0,
+                "global": 5
+            },
+            "options": {
+                "outputTemplate": {
+                    "type": "string",
+                    "title": "Output Template",
+                    "tip": "Variables: {gameName}, {price}, {releaseDate}, {metaCriticScore}, {steamUrl}, {steamShortDescription}",
+                    "default": "{gameName} (Price: {price} - Released: {releaseDate} - Metacritic: {metaCriticScore}) {steamUrl}",
+                    "useTextArea": true,
+                    "value": "{gameName} (Released: {releaseDate} - Metacritic: {metaCriticScore}) {steamUrl}"
+                },
+                "defaultCurrency": {
+                    "type": "string",
+                    "title": "Default Currency (Optional)",
+                    "tip": "Examples: USD, EUR, CAD, GBP",
+                    "default": "",
+                    "value": ""
+                }
+            },
+            "type": "system",
+            "allowTriggerBySharedChat": "inherit",
+            "effects": {
+                "list": [],
+                "id": "0a6c52fb-a7b1-4f0b-8100-2b5cf90e4b46"
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "useCustomFailMessage": false,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            }
+        }
+    },
+    "customCommands": {
+        "7a65a734-5896-4b7f-9a96-bde1408dea9d": {
+            "active": true,
+            "simple": true,
+            "sendCooldownMessage": true,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {},
+            "effects": {
+                "id": "382f6060-c3c0-4e2f-b8c2-4cfc53c4ba74",
+                "list": [
+                    {
+                        "id": "533caa35-47eb-4cad-8652-f784f8c28caa",
+                        "type": "firebot:chat",
+                        "message": "Shiba is bald RAGEY"
+                    }
+                ]
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": "inherit",
+            "trigger": "!ragey",
+            "id": "7a65a734-5896-4b7f-9a96-bde1408dea9d",
+            "createdBy": "gibbdev",
+            "createdAt": "2025-09-29T13:03:58.472+03:00",
+            "count": 22,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2025-12-12T16:04:14.616+03:00"
+        },
+        "355982bc-28ca-40f3-8764-6400208892e8": {
+            "active": true,
+            "simple": false,
+            "sendCooldownMessage": false,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {
+                "global": null
+            },
+            "effects": {
+                "id": "75df455f-6b6d-4d7c-bdf7-f7c5952d6ed8",
+                "list": [
+                    {
+                        "id": "b0fd8f30-c1ed-43ef-8806-5decb1b5979e",
+                        "type": "firebot:playsound",
+                        "active": true,
+                        "soundType": "local",
+                        "volume": 5,
+                        "audioOutputDevice": {
+                            "label": "App Default",
+                            "deviceId": ""
+                        },
+                        "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\creeper.mp3",
+                        "waitForSound": false,
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "dbea668e-1719-499d-9034-be00000e8ed6",
+                        "type": "firebot:conditional-effects",
+                        "active": true,
+                        "ifs": [
+                            {
+                                "conditionData": {
+                                    "mode": "exclusive",
+                                    "conditions": [
+                                        {
+                                            "type": "firebot:custom",
+                                            "comparisonType": "is",
+                                            "value": null,
+                                            "leftSideValue": "$evalJs[``return (\"$userAvatarUrl[$target]\" != \"\" && (\"$isUserInChat[$target]\" == \"true\" || \"$userExists[$target]\" == \"true\"))``]",
+                                            "rightSideValue": "true"
+                                        }
+                                    ]
+                                },
+                                "effectData": {
+                                    "list": [
+                                        {
+                                            "id": "f6a2f903-e071-4620-82cc-429ce44f65d1",
+                                            "type": "firebot:html",
+                                            "active": true,
+                                            "enterAnimation": "slideInDownFull",
+                                            "exitAnimation": "none",
+                                            "inbetweenAnimation": "none",
+                                            "html": "<style>\n  #pfp {\n  \twidth: 10dvw; height: 10dvw;\n    border-radius: 100%;\n    position: absolute;\n    bottom: -2dvw;\n    left: 45dvw;\n    animation: flash 2s steps(1, jump-start) forwards,\n      scale-explosion 2s linear(0, 0.019 10.8%, 0.147 17.6%, 0.985 30%, 0.139 42%, 0.976 52.4%, 0.341 60%, 0.972 67.2%, 0.559 73.2%, 0.984 79.6%, 0.77 84.4%, 0.998 90.4%, 0.939 93.6%, 1) forwards;\n  \t}\n  #username {\n    font-family: \"JetBrains Mono\";\n    bottom: 9dvw;\n    width: 100dvw;\n    text-align: center;\n    font-size: 28px;\n    font-weight: bold;\n    animation:\n      scale-explosion 2s linear(0, 0.019 10.8%, 0.147 17.6%, 0.985 30%, 0.139 42%, 0.976 52.4%, 0.341 60%, 0.972 67.2%, 0.559 73.2%, 0.984 79.6%, 0.77 84.4%, 0.998 90.4%, 0.939 93.6%, 1) forwards;\n    transform-origin: 50% 150%;\t\n  }\n  \n  @keyframes flash {\n    0% {\n      \tfilter: brightness(1);\n    }\n    20% {\n      \tfilter: brightness(10);\n    }\n    40% {\n      \tfilter: brightness(1);\n    }\n    60% {\n      \tfilter: brightness(10);\n    }\n    80% {\n      \tfilter: brightness(1);\n    }\n    100% {\n      \tfilter: brightness(10);\n    }\n  }\n  @keyframes scale-explosion {\n    0% {scale:100%}\n    100%{scale: 150%}\n  }\n</style>\n<img id=\"pfp\" src=\"$userProfileImageUrl[$target]\"/>\n<div id=\"username\" style=\"color:$chatUserColor[$target]\">$userDisplayName[$target]</div>",
+                                            "length": "1.5",
+                                            "enterDuration": "1s",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "3192dcd6-d546-4209-a3a9-5ba86b9e4221",
+                                            "type": "firebot:set-user-metadata",
+                                            "active": true,
+                                            "username": "$target",
+                                            "key": "explodedTimes",
+                                            "data": "$evalJs[`` return  ($userMetadata[$target, explodedTimes] + 1)``]",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "5cec2201-f309-46df-b22d-08339968152d",
+                                            "type": "firebot:chat",
+                                            "active": true,
+                                            "chatter": "Bot",
+                                            "message": "$userDisplayName[$target] was exploded by $user. They were exploded $userMetadata[$target, explodedTimes] times in total",
+                                            "percentWeight": null
+                                        }
+                                    ],
+                                    "id": "97734f1a-0b44-4db8-a7e8-12742c20da55",
+                                    "runMode": "all"
+                                }
+                            }
+                        ],
+                        "otherwiseEffectData": {
+                            "list": [
+                                {
+                                    "id": "3cd8e4c2-a53f-49d7-a06a-d91aebff1ea6",
+                                    "type": "firebot:html",
+                                    "active": true,
+                                    "enterAnimation": "slideInDownFull",
+                                    "exitAnimation": "none",
+                                    "inbetweenAnimation": "none",
+                                    "html": "<style>\n  #pfp {\n  \twidth: 10dvw; height: 10dvw;\n    border-radius: 100%;\n    position: absolute;\n    bottom: -2dvw;\n    left: 45dvw;\n    animation: flash 2s steps(1, jump-start) forwards,\n      scale-explosion 2s linear(0, 0.019 10.8%, 0.147 17.6%, 0.985 30%, 0.139 42%, 0.976 52.4%, 0.341 60%, 0.972 67.2%, 0.559 73.2%, 0.984 79.6%, 0.77 84.4%, 0.998 90.4%, 0.939 93.6%, 1) forwards;\n  \t}\n  #username {\n    font-family: \"JetBrains Mono\";\n    bottom: 9dvw;\n    width: 100dvw;\n    text-align: center;\n    font-size: 28px;\n    font-weight: bold;\n    animation:\n      scale-explosion 2s linear(0, 0.019 10.8%, 0.147 17.6%, 0.985 30%, 0.139 42%, 0.976 52.4%, 0.341 60%, 0.972 67.2%, 0.559 73.2%, 0.984 79.6%, 0.77 84.4%, 0.998 90.4%, 0.939 93.6%, 1) forwards;\n    transform-origin: 50% 150%;\t\n  }\n  \n  @keyframes flash {\n    0% {\n      \tfilter: brightness(1);\n    }\n    20% {\n      \tfilter: brightness(10);\n    }\n    40% {\n      \tfilter: brightness(1);\n    }\n    60% {\n      \tfilter: brightness(10);\n    }\n    80% {\n      \tfilter: brightness(1);\n    }\n    100% {\n      \tfilter: brightness(10);\n    }\n  }\n  @keyframes scale-explosion {\n    0% {scale:100%}\n    100%{scale: 150%}\n  }\n</style>\n<img id=\"pfp\" src=\"$userProfileImageUrl\"/>\n<div id=\"username\" style=\"color:$chatUserColor\">$userDisplayName</div>",
+                                    "length": "1.5",
+                                    "enterDuration": "1s",
+                                    "percentWeight": null
+                                },
+                                {
+                                    "id": "2d043813-c0cc-46a4-a88a-a9ce920a25f5",
+                                    "type": "firebot:set-user-metadata",
+                                    "active": true,
+                                    "username": "$user",
+                                    "key": "explodedTimes",
+                                    "data": "$evalJs[`` return  ($userMetadata[$user, explodedTimes] + 1)``]",
+                                    "percentWeight": null
+                                },
+                                {
+                                    "id": "c6dd1b46-78dc-4ced-b72e-b67ad6e82bc5",
+                                    "type": "firebot:chat",
+                                    "active": true,
+                                    "chatter": "Bot",
+                                    "message": "$userDisplayName[$user] exploded themself. They were exploded $userMetadata[$user, explodedTimes] times in total",
+                                    "percentWeight": null
+                                }
+                            ],
+                            "id": "dba21d1f-f52e-4cd5-89a6-d7b1e2b1c46f",
+                            "runMode": "all"
+                        },
+                        "percentWeight": null,
+                        "bubbleOutputs": true
+                    },
+                    {
+                        "id": "bf31a95b-4fc6-4a9f-b11c-870c2e890958",
+                        "type": "firebot:delay",
+                        "active": true,
+                        "delay": "2.0",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "35483f86-5e87-4d9a-91a2-270a18ad24e8",
+                        "type": "firebot:playsound",
+                        "active": true,
+                        "soundType": "local",
+                        "volume": 3,
+                        "audioOutputDevice": {
+                            "label": "App Default",
+                            "deviceId": ""
+                        },
+                        "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\roblox-explosion-sound.mp3",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "6a6c34fa-00a8-43d2-a7a3-e4638a2d2671",
+                        "type": "firebot:delay",
+                        "active": true,
+                        "delay": "0.5",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "1d007806-190f-41b5-b3a0-2b7e29c559cf",
+                        "type": "firebot:showImage",
+                        "active": true,
+                        "imageType": "local",
+                        "position": "Custom",
+                        "customCoords": {
+                            "top": null,
+                            "bottom": 0,
+                            "left": 510,
+                            "right": null
+                        },
+                        "rotType": "deg",
+                        "enterAnimation": "none",
+                        "exitAnimation": "none",
+                        "inbetweenAnimation": "none",
+                        "file": "C:\\Users\\gibb\\Assets\\streaming\\images\\explosion-minecraft.gif",
+                        "length": "1.8",
+                        "percentWeight": null,
+                        "height": 150
+                    }
+                ],
+                "runMode": "all"
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": "inherit",
+            "trigger": "!explode",
+            "description": "Explode someone or yourself",
+            "ignoreBot": true,
+            "ignoreWhispers": true,
+            "id": "355982bc-28ca-40f3-8764-6400208892e8",
+            "createdBy": "gibbdev",
+            "createdAt": "2025-09-29T13:05:25.438+03:00",
+            "count": 107,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2026-03-11T18:23:33.865+03:00",
+            "sendCooldownMessageAsReply": true
+        },
+        "d8c89406-e23c-4d8b-9d9d-ed9710a7723c": {
+            "active": true,
+            "simple": false,
+            "sendCooldownMessage": false,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {
+                "global": 30
+            },
+            "effects": {
+                "id": "db78901d-ac4d-4815-b668-20565375edea",
+                "list": [
+                    {
+                        "id": "57165f6b-9297-4a55-a988-5266437e4628",
+                        "type": "firebot:conditional-effects",
+                        "active": true,
+                        "ifs": [
+                            {
+                                "conditionData": {
+                                    "mode": "exclusive",
+                                    "conditions": [
+                                        {
+                                            "type": "firebot:custom",
+                                            "comparisonType": "is",
+                                            "value": null,
+                                            "leftSideValue": "$arg[2]",
+                                            "rightSideValue": "think2"
+                                        }
+                                    ]
+                                },
+                                "effectData": {
+                                    "list": [
+                                        {
+                                            "id": "f18fa711-4295-4330-a578-4665ca349026",
+                                            "type": "firebot:chat",
+                                            "active": false,
+                                            "chatter": "Bot",
+                                            "message": "Test passed, $arg[1] \nIs emote: $evalJs[``return (\"$chatMessageEmoteUrls[2]\" != \"\")``] - Is user: $evalJs[``return (\"$userAvatarUrl[$arg[1]]\" != \"\" && (\"$isUserInChat[$arg[1]]\" == \"true\" || \"$userExists[$arg[1]]\" == \"true\"))``] - $userAvatarUrl[$arg[1]]",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "4505c6e7-a460-495a-ac5f-52a4e36e1e7c",
+                                            "type": "firebot:html",
+                                            "active": true,
+                                            "enterAnimation": "none",
+                                            "exitAnimation": "none",
+                                            "inbetweenAnimation": "none",
+                                            "html": "    <!-- NILK: https://cdn.7tv.app/emote/01K4CCM2ZQPBVPA3FHQKYEXETG/4x.gif -->\n<style>\n#wrapper {\n    position: fixed;\n    left:0;\n    top:0;\n    width:100dvw;\n    height:100dvh;\n}\n#anchor {\n    position: absolute;\n    left: -60px;\n    top: 50%;\n}\n#thought-container{\n    display: flex;\n    flex-direction: row;\n    scale: 400%;\n    transform-origin: 0 0;\n}\n#think-image-1 {\n    position: relative;\n    align-self: center;\n    image-rendering: pixelated;\n    animation: appear 1ms linear 0.5s forwards;\n    opacity: 0;\n    \n}\n#think-image-2 {\n    position: relative;\n    align-self: center;\n    translate: -1px -9px;\n    image-rendering: pixelated;\n    animation: appear 1ms linear 1s forwards;\n    opacity: 0;\n    \n}\n#think-image-3 {\n    image-rendering: pixelated;\n    align-self: flex-start;\n    animation: appear 1ms linear 1.5s forwards;\n    opacity: 0;\n    \n}\n\n#data-container {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 220px;\n    height: 184px;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    left: 308px;\n    animation: appear 1ms linear 1.5s forwards;\n    opacity: 0;\n}\n\n#user-image {\n    border-radius: 100%;\n    height: 85px;\n    image-rendering: pixelated;\n}\n#emote-image {\n    border-radius: 100%;\n    height: 85px;\n    image-rendering: pixelated;\n}\n#text {\n  \tcolor: white;/*<- replace wwith user display name color grab from your streamer bot application*/\n    font-family: \"JetBrains Mono\";\n    font-weight: bold;\n    font-size: 20px;\n    width: 140px;\n    overflow: hidden;\n    text-align: center;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    text-shadow: 1px 1px 2px black;\n}\n\n#thinker-image {\n    position: relative;\n    border-radius: 100%;\n    height: 55px;\n    width: 55px;\n    translate: 0 20px;\n    background-image: url(\"$userAvatarUrl[$user]\");\n    background-size: 55px;\n    opacity: 100%;\n}\n\n#username {\n  \tcolor: white;/*<- replace wwith user display name color grab from your streamer bot application*/\n    position: relative;\n    overflow: hidden;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n    font-family: \"JetBrains Mono\";\n    font-size: 6px;\n    top: -8px;\n    width: 40px;\n    right: -15px;\n    text-shadow: 0.25px 0.25px 0.5px black;\n}\n\n@keyframes appear {\n    0% {opacity: 0%;}\n    100% {opacity: 100%;}\n}\n\n</style>\n\n<div id=\"wrapper\">\n <div id=\"anchor\">\n    <div id=\"thought-container\">\n        <div id=\"thinker-image\">\n            <div id=\"username\" style=\"color:$chatUserColor[$user]\">$userDisplayName[$user]</div>\n        </div>\n        <img id=\"think-image-1\" src=\"https://raw.githubusercontent.com/GibberishDev/resrrep/refs/heads/main/thinking1.gif\" alt=\"\">\n        <img id=\"think-image-2\" src=\"https://raw.githubusercontent.com/GibberishDev/resrrep/refs/heads/main/thinking2.gif\" alt=\"\">\n        <img id=\"think-image-3\" src=\"https://raw.githubusercontent.com/GibberishDev/resrrep/refs/heads/main/thinking3.gif?t=0\" alt=\"\">\n    </div>\n    <div id=\"data-container\">\n        <div id=\"text\";>$arg[1]</div>\n        <img id=\"user-image\" src=\"$userAvatarUrl[$arg[1]]\" alt=\"\">\n        <img id=\"emote-image\" src=\"$userAvatarUrl[$arg[1]]\" alt=\"\">\n    </div>\n </div>\n</div>\n\n<script defer>\n    function determineType() {\n        if (\"$chatMessageEmoteUrls[2]\" != \"\") {\n            processEmote()\n        } else if (\"$userAvatarUrl[$arg[2]]\" != \"\" && (\"$isUserInChat[$arg[2]]\" == \"true\" || \"$userExists[$arg[2]]\" == \"true\")) {\n            processUser()\n        } else {\n            processWord()\n        }\n    }\n\n    function processEmote() {\n        document.getElementById(\"text\").style.display = \"none\"\n        document.getElementById(\"user-image\").style.display = \"none\"\n        document.getElementById(\"emote-image\").src = \"$chatMessageEmoteUrls[1]\"\n    }\n\n    function processUser() {\n        document.getElementById(\"text\").innerHTML = \"$userDisplayName[$arg[1]]\"\n        document.getElementById(\"user-image\").src = \"$userAvatarUrl[$arg[1]]\"\n        document.getElementById(\"emote-image\").style.display = \"none\"\n    }\n\n    function processWord() {\n        document.getElementById(\"text\").innerHTML = \"$arg[1]\"\n        document.getElementById(\"user-image\").style.display = \"none\"\n        document.getElementById(\"emote-image\").style.display = \"none\"\n    }\n\n    determineType()\n</script>",
+                                            "length": "7",
+                                            "percentWeight": null
+                                        }
+                                    ],
+                                    "id": "63a6a8c6-f34b-45af-9b43-54592daa721f"
+                                }
+                            }
+                        ],
+                        "otherwiseEffectData": {
+                            "list": [],
+                            "id": "06de4611-1af2-41fc-8b9f-ee2beb776620"
+                        },
+                        "percentWeight": null
+                    }
+                ]
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": "inherit",
+            "trigger": "think1",
+            "triggerIsRegex": false,
+            "regexDescription": "",
+            "description": "Think of someone or something",
+            "ignoreBot": true,
+            "ignoreWhispers": true,
+            "id": "d8c89406-e23c-4d8b-9d9d-ed9710a7723c",
+            "createdBy": "gibbdev",
+            "createdAt": "2025-09-30T18:42:58.601+03:00",
+            "count": 25,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2026-03-11T17:53:03.443+03:00",
+            "scanWholeMessage": false
+        },
+        "9d658d86-295a-42d2-ab23-6709599079e7": {
+            "active": true,
+            "simple": false,
+            "sendCooldownMessage": false,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {
+                "global": 10
+            },
+            "effects": {
+                "id": "946a7279-0bda-4db0-be9a-6d0425d97d4a",
+                "list": [
+                    {
+                        "id": "de402926-32b2-477c-9982-c320c34dc851",
+                        "type": "firebot:conditional-effects",
+                        "active": true,
+                        "ifs": [
+                            {
+                                "conditionData": {
+                                    "mode": "exclusive",
+                                    "conditions": [
+                                        {
+                                            "type": "firebot:custom",
+                                            "comparisonType": "is",
+                                            "value": null,
+                                            "leftSideValue": "$evalJs[``return String($readFile[C:\\Users\\gibb\\Assets\\streaming\\music overlay\\data.json])``]",
+                                            "rightSideValue": "null"
+                                        }
+                                    ]
+                                },
+                                "effectData": {
+                                    "list": [
+                                        {
+                                            "id": "f2a63196-490a-4cd4-9a4c-e2b49d4716d5",
+                                            "type": "firebot:chat",
+                                            "active": true,
+                                            "chatter": "Bot",
+                                            "message": "No music playback is currently detected.",
+                                            "percentWeight": null
+                                        }
+                                    ],
+                                    "id": "794bd1a5-5c01-47cf-a803-8484978aacf0"
+                                }
+                            }
+                        ],
+                        "otherwiseEffectData": {
+                            "list": [
+                                {
+                                    "id": "21668025-05a7-439f-bac8-0970f78172e1",
+                                    "type": "firebot:chat",
+                                    "active": true,
+                                    "chatter": "Bot",
+                                    "message": "Now playing: $evalJs[``let text=$readFile[C:\\Users\\gibb\\Assets\\streaming\\music overlay\\data.json];return text.title``] - $evalJs[``let text=$readFile[C:\\Users\\gibb\\Assets\\streaming\\music overlay\\data.json];return text.artists[0]``]",
+                                    "percentWeight": null
+                                }
+                            ],
+                            "id": "4f2ad75b-4468-4072-8a4a-dd2f7c36e611"
+                        },
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "099972b8-ea40-4832-94d9-e56b429933d3",
+                        "type": "ebiggz:obs-toggle-source-visibility",
+                        "active": true,
+                        "selectedSources": [
+                            {
+                                "sceneName": "Scene",
+                                "sourceId": 7,
+                                "groupName": "main-scene-overlays",
+                                "sourceName": "Music overlay",
+                                "action": false
+                            }
+                        ],
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "8c277462-f185-40b1-be61-c67e1fe3f2f5",
+                        "type": "firebot:delay",
+                        "active": true,
+                        "delay": "0.1",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "5b18d75c-cd8d-431e-adf0-a0724dd185dd",
+                        "type": "ebiggz:obs-toggle-source-visibility",
+                        "active": true,
+                        "selectedSources": [
+                            {
+                                "sceneName": "Scene",
+                                "sourceId": 7,
+                                "groupName": "main-scene-overlays",
+                                "sourceName": "Music overlay",
+                                "action": true
+                            }
+                        ],
+                        "percentWeight": null
+                    }
+                ],
+                "runMode": "all"
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [
+                "!nowplaying",
+                "!song",
+                "!fuckyoumukpuk",
+                "!heystreamerwhatsthissound"
+            ],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": false,
+            "trigger": "!music",
+            "description": "What music is playing right now? Who tf knows...",
+            "ignoreBot": true,
+            "ignoreWhispers": true,
+            "id": "9d658d86-295a-42d2-ab23-6709599079e7",
+            "createdBy": "gibbdev",
+            "createdAt": "2025-10-05T13:16:39.466+03:00",
+            "count": 43,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2026-02-04T16:55:57.036+03:00",
+            "sendCooldownMessageAsReply": true
+        },
+        "2d5bedfe-8b70-4b34-8e9d-08dd089bf794": {
+            "active": true,
+            "simple": false,
+            "sendCooldownMessage": false,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {
+                "global": 60
+            },
+            "effects": {
+                "id": "81e53a56-22cc-448c-94f1-fe575675d8af",
+                "list": [
+                    {
+                        "id": "f238432e-1f04-4dc4-91fd-ef3dfd02fbb2",
+                        "type": "firebot:playsound",
+                        "active": true,
+                        "soundType": "local",
+                        "volume": 7,
+                        "audioOutputDevice": {
+                            "label": "App Default",
+                            "deviceId": ""
+                        },
+                        "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\mgs_alert.mp3",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "9cfc1669-1a80-4c1a-b18c-fa53cf897e89",
+                        "type": "firebot:showImage",
+                        "active": true,
+                        "imageType": "local",
+                        "position": "Middle",
+                        "customCoords": {
+                            "top": 0,
+                            "bottom": null,
+                            "left": 0,
+                            "right": null
+                        },
+                        "rotType": "deg",
+                        "enterAnimation": "bounceIn",
+                        "exitAnimation": "fadeOut",
+                        "inbetweenAnimation": "none",
+                        "file": "C:\\Users\\gibb\\Assets\\streaming\\images\\evidence_2.png",
+                        "length": "0.5",
+                        "width": 1280,
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "a4731cc4-1009-4558-bd9d-ccdb5b1a8339",
+                        "type": "firebot:chat",
+                        "active": true,
+                        "chatter": "Bot",
+                        "message": "https://raw.githubusercontent.com/GibberishDev/Yarnboard/refs/heads/main/src/assets/png/evidence_2.png",
+                        "sendAsReply": true,
+                        "percentWeight": null
+                    }
+                ]
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": "inherit",
+            "trigger": "!mud_punk",
+            "description": "point and laugh at Mud punk",
+            "ignoreStreamer": false,
+            "ignoreBot": true,
+            "id": "2d5bedfe-8b70-4b34-8e9d-08dd089bf794",
+            "createdBy": "gibbdev",
+            "createdAt": "2025-10-09T16:36:39.378+03:00",
+            "count": 30,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2026-03-11T14:23:57.354+03:00"
+        },
+        "bdb938b4-6cff-43ad-be87-b56d9a4929e4": {
+            "active": true,
+            "simple": false,
+            "sendCooldownMessage": false,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {
+                "user": 60
+            },
+            "effects": {
+                "id": "d3fddacc-280a-4c5f-8e39-a3f5edf6e2c5",
+                "list": [
+                    {
+                        "id": "256e1a67-2559-4ee2-86e1-0ebaf620520f",
+                        "type": "firebot:showImage",
+                        "active": true,
+                        "imageType": "local",
+                        "position": "Custom",
+                        "customCoords": {
+                            "top": null,
+                            "bottom": 0,
+                            "left": 500,
+                            "right": null
+                        },
+                        "rotType": "deg",
+                        "enterAnimation": "slideInDownFull",
+                        "exitAnimation": "slideOutDownFull",
+                        "inbetweenAnimation": "none",
+                        "file": "C:\\Users\\gibb\\Assets\\streaming\\images\\door.gif",
+                        "height": 150,
+                        "length": "6",
+                        "percentWeight": null,
+                        "enterDuration": "1s",
+                        "exitDuration": "1s"
+                    },
+                    {
+                        "id": "6c0800ce-ab8a-4bea-9880-0c4b2413d87a",
+                        "type": "firebot:html",
+                        "active": true,
+                        "enterAnimation": "none",
+                        "exitAnimation": "none",
+                        "inbetweenAnimation": "none",
+                        "html": "<style>\n  #pfp {\n  \twidth: 10dvw; height: 10dvw;\n    border-radius: 100%;\n    position: absolute;\n    bottom: -2dvw;\n    left: 45dvw;\n    animation: walk 3s 2s ease-in forwards;\n  }\n  #username {\n    font-family: \"JetBrains Mono\";\n    bottom: 9dvw;\n    width: 100dvw;\n    text-align: center;\n    font-size: 28px;\n    font-weight: bold;\n    animation: walk 3s 2s ease-in forwards;\n    transform-origin: 50% 250%;\n  }\n \n @keyframes walk {\n   0% {\n     translate: 0px 0px;\n     scale: 100%;\n   }\n   80% {\n     translate: 300px 10px;\n     scale: 0%;\n   }\n  }\n  \n</style>\n<img id=\"pfp\" src=\"$userProfileImageUrl\"/>\n<div id=\"username\" style=\"color:$chatUserColor\">$userDisplayName</div>",
+                        "length": "4",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "fb97136e-9784-4b3e-b4f9-7c64f901bba6",
+                        "type": "firebot:chat",
+                        "active": true,
+                        "chatter": "Bot",
+                        "message": "Have a nice lurkie $userDisplayName!",
+                        "sendAsReply": true,
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "1a4b13fa-c548-46fb-9ad7-4af1d9a27143",
+                        "type": "firebot:delay",
+                        "active": true,
+                        "delay": "1",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "eaa62c05-499e-4857-b1e0-15104c36e3d9",
+                        "type": "firebot:playsound",
+                        "active": true,
+                        "soundType": "local",
+                        "volume": 6,
+                        "audioOutputDevice": {
+                            "label": "App Default",
+                            "deviceId": ""
+                        },
+                        "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\roblox-bye.mp3",
+                        "percentWeight": null
+                    }
+                ]
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": "inherit",
+            "trigger": "!lurk",
+            "description": "lurk, yeh",
+            "ignoreBot": true,
+            "ignoreStreamer": false,
+            "id": "bdb938b4-6cff-43ad-be87-b56d9a4929e4",
+            "createdBy": "gibbdev",
+            "createdAt": "2025-10-09T16:49:03.164+03:00",
+            "count": 50,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2026-02-17T19:41:24.429+03:00",
+            "hidden": false,
+            "scanWholeMessage": true
+        },
+        "29c5f7bb-9b8c-4ae1-8cb1-7baa44055621": {
+            "active": true,
+            "simple": false,
+            "sendCooldownMessage": false,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {
+                "global": 10
+            },
+            "effects": {
+                "id": "65e5c317-1088-49a6-9b26-b6df4ffd7b80",
+                "list": [
+                    {
+                        "id": "a9b44271-11f7-4dc8-9cae-07885110dd4c",
+                        "type": "firebot:randomeffect",
+                        "active": true,
+                        "effectList": {
+                            "list": [
+                                {
+                                    "id": "23ae2fb9-2522-4eb5-b49b-85ef8dfcc595",
+                                    "type": "firebot:chat",
+                                    "active": true,
+                                    "chatter": "Bot",
+                                    "sendAsReply": true,
+                                    "message": "I don't know...",
+                                    "percentWeight": null
+                                },
+                                {
+                                    "id": "2d02b697-64c1-4134-bc7e-a2eab8b37c4d",
+                                    "type": "firebot:chat",
+                                    "active": true,
+                                    "chatter": "Bot",
+                                    "sendAsReply": true,
+                                    "message": "Just google it",
+                                    "percentWeight": null
+                                },
+                                {
+                                    "id": "10ec9025-e6cc-44ab-8100-d1f6b8a518ca",
+                                    "type": "firebot:chat",
+                                    "active": true,
+                                    "chatter": "Bot",
+                                    "sendAsReply": true,
+                                    "message": "I think its something everyone knows...",
+                                    "percentWeight": null
+                                },
+                                {
+                                    "id": "135e1414-d85b-4c12-9e3a-a03f14f71737",
+                                    "type": "firebot:chat",
+                                    "active": true,
+                                    "chatter": "Bot",
+                                    "sendAsReply": true,
+                                    "message": "Promise rejection error",
+                                    "percentWeight": null
+                                },
+                                {
+                                    "id": "41b34f0b-1816-4661-a669-fe15b68d1035",
+                                    "type": "firebot:chat",
+                                    "active": true,
+                                    "chatter": "Bot",
+                                    "sendAsReply": true,
+                                    "message": "Javascript promise rejection error",
+                                    "percentWeight": null
+                                },
+                                {
+                                    "id": "b3d895f0-747c-4b48-9cf0-df94aac0bd10",
+                                    "type": "firebot:chat",
+                                    "active": true,
+                                    "chatter": "Bot",
+                                    "sendAsReply": true,
+                                    "message": "Can you please rephrase the question?",
+                                    "percentWeight": null
+                                }
+                            ],
+                            "id": "e3516e47-f7c7-426a-83cb-7e0ea9e9cadd"
+                        },
+                        "percentWeight": null
+                    }
+                ]
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": "inherit",
+            "trigger": "@grok",
+            "description": "Ask AI a question!",
+            "id": "29c5f7bb-9b8c-4ae1-8cb1-7baa44055621",
+            "createdBy": "gibbdev",
+            "createdAt": "2025-10-10T23:08:17.970+03:00",
+            "count": 9,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2026-02-04T17:45:52.966+03:00"
+        },
+        "765c42b5-4206-43f9-8df1-f625752d859e": {
+            "active": false,
+            "simple": false,
+            "sendCooldownMessage": true,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {},
+            "effects": {
+                "id": "7f9d778e-5261-4642-8498-8f58b2a0ec2a",
+                "list": [
+                    {
+                        "id": "2a56ad30-2252-4211-8943-649dbbcd26cf",
+                        "type": "firebot:conditional-effects",
+                        "active": true,
+                        "ifs": [
+                            {
+                                "conditionData": {
+                                    "mode": "exclusive",
+                                    "conditions": [
+                                        {
+                                            "type": "firebot:username",
+                                            "comparisonType": "is",
+                                            "rightSideValue": "gibbdev"
+                                        }
+                                    ]
+                                },
+                                "effectData": {
+                                    "list": [],
+                                    "id": "6bb2cee5-6159-415a-badc-93ba22b438f1"
+                                }
+                            }
+                        ],
+                        "otherwiseEffectData": {
+                            "list": [],
+                            "id": "39cc219f-74a7-4ceb-a42b-8308345dce28"
+                        },
+                        "percentWeight": null
+                    }
+                ]
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": "inherit",
+            "hidden": true,
+            "trigger": "!test",
+            "id": "765c42b5-4206-43f9-8df1-f625752d859e",
+            "createdBy": "gibbdev",
+            "createdAt": "2025-10-30T16:28:33.736+03:00",
+            "count": 0,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2026-02-04T15:27:49.244+03:00"
+        },
+        "e3473d1d-3ae1-4faa-ac16-16c333cbc1b5": {
+            "active": true,
+            "simple": false,
+            "sendCooldownMessage": false,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {
+                "global": 5
+            },
+            "effects": {
+                "id": "dfae9703-8bbc-4a95-b592-86c64faf15f0",
+                "list": [
+                    {
+                        "id": "e2b9a1d5-b2cf-4f72-8c54-c4f6d40df67b",
+                        "type": "firebot:playsound",
+                        "active": true,
+                        "soundType": "local",
+                        "volume": 5,
+                        "audioOutputDevice": {
+                            "label": "App Default",
+                            "deviceId": ""
+                        },
+                        "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\macrohard.mp3",
+                        "percentWeight": null
+                    }
+                ]
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": "inherit",
+            "trigger": "!macrohard",
+            "id": "e3473d1d-3ae1-4faa-ac16-16c333cbc1b5",
+            "createdBy": "gibbdev",
+            "createdAt": "2025-12-02T17:16:41.562+03:00",
+            "count": 3,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2025-12-29T13:45:48.231+03:00"
+        },
+        "8fc43055-16bf-4b99-81e6-dc754c58354e": {
+            "active": true,
+            "simple": false,
+            "sendCooldownMessage": false,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {
+                "global": 10
+            },
+            "effects": {
+                "id": "3e4f76fd-f85a-4812-820b-4a58ddb7f84e",
+                "list": [
+                    {
+                        "id": "adb2ddca-de07-479c-88e7-283da7197d83",
+                        "type": "firebot:randomeffect",
+                        "active": true,
+                        "effectList": {
+                            "id": "de3a61bd-0ad8-44b0-9c0e-0d33f5be1dbc",
+                            "list": [
+                                {
+                                    "id": "297a69ac-6362-4fd8-8018-e55ef9217a24",
+                                    "type": "firebot:playsound",
+                                    "active": true,
+                                    "soundType": "local",
+                                    "volume": 5,
+                                    "audioOutputDevice": {
+                                        "label": "App Default",
+                                        "deviceId": ""
+                                    },
+                                    "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\baba_1.wav",
+                                    "percentWeight": null
+                                },
+                                {
+                                    "id": "940dd840-9722-4203-918d-277da27715c4",
+                                    "type": "firebot:playsound",
+                                    "active": true,
+                                    "soundType": "local",
+                                    "volume": 5,
+                                    "audioOutputDevice": {
+                                        "label": "App Default",
+                                        "deviceId": ""
+                                    },
+                                    "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\baba_2.wav",
+                                    "percentWeight": null
+                                },
+                                {
+                                    "id": "5bc75c12-4b03-4243-bea9-14958745e76d",
+                                    "type": "firebot:playsound",
+                                    "active": true,
+                                    "soundType": "local",
+                                    "volume": 5,
+                                    "audioOutputDevice": {
+                                        "label": "App Default",
+                                        "deviceId": ""
+                                    },
+                                    "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\baba_3.wav",
+                                    "percentWeight": null
+                                }
+                            ],
+                            "runMode": "random"
+                        },
+                        "percentWeight": null
+                    }
+                ],
+                "runMode": "all"
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": "inherit",
+            "sendCooldownMessageAsReply": false,
+            "trigger": "!baba",
+            "hidden": true,
+            "id": "8fc43055-16bf-4b99-81e6-dc754c58354e",
+            "createdBy": "gibbdev",
+            "createdAt": "2026-02-05T16:42:23.139+03:00",
+            "count": 3,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2026-02-05T16:43:29.502+03:00"
+        },
+        "9a0185d6-cb5e-4dc9-b821-a078eed1d1cc": {
+            "active": true,
+            "simple": false,
+            "sendCooldownMessage": false,
+            "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+            "cooldown": {
+                "user": 20
+            },
+            "effects": {
+                "id": "e5ee0fbb-289e-444b-a7de-a5787b006bea",
+                "list": [
+                    {
+                        "id": "9b9abad5-1024-440d-9bd6-5061a353f14e",
+                        "type": "firebot:chat",
+                        "active": true,
+                        "chatter": "Bot",
+                        "message": "$userDisplayName has $evalJs[``return Math.ceil(30 * Math.random())``] cm cock COCKING",
+                        "percentWeight": null
+                    }
+                ],
+                "runMode": "all"
+            },
+            "restrictionData": {
+                "restrictions": [],
+                "mode": "all",
+                "sendFailMessage": true,
+                "failMessage": "Sorry @{user}, you cannot use this command because: {reason}",
+                "sendAsReply": false
+            },
+            "aliases": [],
+            "sortTags": [],
+            "treatQuotedTextAsSingleArg": false,
+            "allowTriggerBySharedChat": true,
+            "sendCooldownMessageAsReply": true,
+            "trigger": "COCKING",
+            "description": "COCKING measurement",
+            "ignoreBot": true,
+            "ignoreWhispers": true,
+            "id": "9a0185d6-cb5e-4dc9-b821-a078eed1d1cc",
+            "createdBy": "gibbdev",
+            "createdAt": "2026-03-11T17:13:00.736+03:00",
+            "count": 9,
+            "type": "custom",
+            "lastEditBy": "gibbdev",
+            "lastEditAt": "2026-03-12T21:04:44.125+03:00"
+        }
+    }
+}

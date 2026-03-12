@@ -1,0 +1,2154 @@
+{
+    "groups": {
+        "74229c87-709f-4b05-9688-ce8b13fb091a": {
+            "id": "74229c87-709f-4b05-9688-ce8b13fb091a",
+            "name": "Emote sounds",
+            "active": true,
+            "events": [
+                {
+                    "name": "Emote EXPLODE",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "64db629d-59d7-4801-a3f8-f08fb83f6a79",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "ba8154cd-1eb3-4821-9820-ea0133a795aa",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "11c3e170-245c-4610-8d5a-7c10694b5c2c",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 4,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\roblox-explosion-sound.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "29637024-4c67-40d0-a127-041db89d765f",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(explode)\\b)"
+                            }
+                        ]
+                    },
+                    "id": "7df3217a-d29f-48bc-942b-cb9aad019650",
+                    "customCooldown": true,
+                    "customCooldownPerUser": true,
+                    "customCooldownSecs": 2
+                },
+                {
+                    "name": "Emote Silly cat",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "09ff3d0b-645f-4fa8-b864-dc37c19d6eb0",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "a43e1cd5-e2fd-40dc-8960-677870716dcc",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "223900b2-989f-4711-b267-a32afe6478e9",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 6,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\mlem.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "cb9772ef-ea04-4682-a35a-300fd2051b22",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(SillyCat)\\b)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)\\:b( |$)"
+                            }
+                        ]
+                    },
+                    "id": "818d4515-c652-4b2d-b470-43168cca3f35",
+                    "customCooldown": true,
+                    "customCooldownSecs": 2,
+                    "customCooldownPerUser": true
+                },
+                {
+                    "name": "Emote NONO",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "a43fbaac-2f56-4739-b9e3-61c3730e8259",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "ae977eb0-7286-403d-8262-d88daeda0e5e",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "52617f0c-38fe-4910-b579-a5aabc5de99c",
+                                "type": "firebot:randomeffect",
+                                "active": true,
+                                "effectList": {
+                                    "list": [
+                                        {
+                                            "id": "2aab791b-277a-4de2-a81e-f7eaf8f3bbc8",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 7,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\gibb-no.mp3",
+                                            "percentWeight": 0.5
+                                        },
+                                        {
+                                            "id": "500188df-9ddb-4a98-9257-fc4b889e65c1",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 7,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\shiba-no.mp3",
+                                            "percentWeight": 0.5
+                                        }
+                                    ],
+                                    "id": "934459bd-f5a3-4685-ac67-6e3b575086d0"
+                                },
+                                "weighted": true,
+                                "percentWeight": null,
+                                "bubbleOutputs": true
+                            }
+                        ],
+                        "id": "1be9e8a4-e822-4d77-a543-cd1d7c3cbed5",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "\\b(NONO)\\b"
+                            }
+                        ]
+                    },
+                    "id": "7df7abbe-86e9-48cf-adda-ce7399c767e0",
+                    "customCooldown": true,
+                    "customCooldownPerUser": true,
+                    "customCooldownSecs": 2
+                },
+                {
+                    "name": "Emote OOOO",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "81525a65-d716-4b41-a1fd-b9e0d59eaf94",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "43d72560-d3c8-4f20-893a-4007ad995826",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "1124cbc5-e040-4449-8269-eb3d86edf4df",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 5,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\augh.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "f412e1a6-14be-44a7-81a4-c60ed1f7cd0c",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "\\b(OOOO)\\b"
+                            }
+                        ]
+                    },
+                    "id": "d7539cb5-4ab3-4fdc-bf00-8f0507c1ceea",
+                    "customCooldown": true,
+                    "customCooldownSecs": 2,
+                    "customCooldownPerUser": true
+                },
+                {
+                    "name": "Emote 5Head",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "2faefd2d-099e-4ddc-8194-2bf186c4b692",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "a8ba0043-a0b3-42ba-a732-9766290abaa0",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "d5a51a4c-49a8-44e5-94da-150ad652f599",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 7,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\big-brain.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "36392367-f81b-433b-8d1e-b29c79693912",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "\\b(5Head)\\b"
+                            }
+                        ]
+                    },
+                    "id": "8aca6ce5-4160-4f02-878a-16cb983134d5",
+                    "customCooldown": true,
+                    "customCooldownPerUser": true,
+                    "customCooldownSecs": 2
+                },
+                {
+                    "name": "Emote AAAA",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "e187f833-ddf3-4cf5-bb6c-4b6248d8b401",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "a526b03c-f1c4-4541-8a33-cc44fcc3a67c",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "c1d61dda-4cf0-4cbb-a7db-650b98145df7",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 6,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\ah.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "1e520e78-dac7-4f6e-b20f-5232b72e1647",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "\\b(AAAA)\\b"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "\\b(z3roda1AAAAA)\\b"
+                            }
+                        ]
+                    },
+                    "id": "5d9326c2-2024-4679-be90-facfbbd07dfe",
+                    "customCooldown": true,
+                    "customCooldownPerUser": true,
+                    "customCooldownSecs": 2
+                },
+                {
+                    "name": "Emote Neco Arcs",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "9cb2a46e-8dfd-4ac2-a6b1-0f8fb95c4c2d",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "4670dfc8-f06b-4b58-9004-afcce8f08e8b",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "222cf44a-1ff4-47e4-afe9-4e33415a5777",
+                                "type": "firebot:randomeffect",
+                                "active": true,
+                                "effectList": {
+                                    "list": [
+                                        {
+                                            "id": "4b6f3e44-7719-46e6-b65c-6bbeef536161",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 5,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\neco-arc-dori.mp3",
+                                            "percentWeight": 0.1639
+                                        },
+                                        {
+                                            "id": "aa9573d1-c9e8-4b89-bae7-6d57e78c2681",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 5,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\neco-arc-nyanyanya2.mp3",
+                                            "percentWeight": 0.1454
+                                        },
+                                        {
+                                            "id": "4f27baa1-0476-4ebb-a006-5650e0b16122",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 5,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\neco-arc-nyeh.mp3",
+                                            "percentWeight": 1
+                                        },
+                                        {
+                                            "id": "ce37125b-ac61-4416-8ddd-b7e581f14c27",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 5,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\neco-arc-sound-effect.mp3",
+                                            "percentWeight": 0.6091
+                                        }
+                                    ],
+                                    "id": "888b59a1-f651-4748-8719-0842286223d0"
+                                },
+                                "weighted": true,
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "987d9be5-fdda-49a2-81d8-0bed2e69479d",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(necoTaunt)\\b)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(NecoPing)\\b)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(NecoHyper)\\b)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(necoSpin)\\b)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(necoHyper)\\b)"
+                            }
+                        ]
+                    },
+                    "id": "c4de6406-a804-42c2-9cd8-3fd10b340bcc",
+                    "customCooldown": true,
+                    "customCooldownSecs": 2,
+                    "customCooldownPerUser": true
+                },
+                {
+                    "name": "Emote sad emotes bowomp",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "9153e0a1-c07b-4264-ac7d-9f9535fd70dd",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "777e3ba7-1018-45bd-908f-3e57b2fa0b61",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "480f10d0-a79f-4f70-8e03-642ba17efff8",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 5,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\letdown-bowomp-sponge.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "896bd5b3-f460-4ff6-a1a4-20642b183605",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(cryCat)\\b)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(trippe21Sadghost)\\b)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)\\:\\(( |$)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)\\)\\:( |$)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)\\:c( |$)"
+                            }
+                        ]
+                    },
+                    "id": "d3b9a1cf-390a-4fb7-b17c-a972521f34e1",
+                    "customCooldown": true,
+                    "customCooldownSecs": 2,
+                    "customCooldownPerUser": true
+                },
+                {
+                    "name": "Emote HUHH",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "a8a20875-6511-49e3-ac17-72702cc600ee",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "4b142e81-c141-4ca6-9bfa-995800f3c98b",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "d3674da7-f34b-4f84-aff1-17e91493e5ec",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 7,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\huhh.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "f98946d0-ab33-4697-afd7-b598107c3210",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(z3roda11krac)\\b)"
+                            },
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(HUHH)\\b)"
+                            }
+                        ]
+                    },
+                    "id": "8c00fa85-cc28-4362-980b-a85567c9bbe1",
+                    "customCooldown": true,
+                    "customCooldownPerUser": true,
+                    "customCooldownSecs": 2
+                },
+                {
+                    "name": "Emote IDIOT",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "b5584994-2e3e-4b7b-b262-5921a2e2ac08",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "850dac69-0567-4a17-8037-e8bec69c3357",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "d2f09d3d-7473-4de3-a20a-5040b6e658cd",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 1,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\cat-laugh.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "1903929f-21c1-4893-bf94-aa32fcbbaa1c",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(IDIOT)\\b)"
+                            }
+                        ]
+                    },
+                    "id": "359b83ea-5c18-4836-9507-c1211efbf5a7",
+                    "customCooldown": true,
+                    "customCooldownPerUser": true,
+                    "customCooldownSecs": 2
+                },
+                {
+                    "name": "Emote First time chatter wtf",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "f6e0055a-ac28-48b5-8264-93edaea008e1",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "6a6a90bb-9256-4d1a-9511-76ccbbd3b949",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "76219580-5233-445a-a898-c2fe8f2bfc2f",
+                                "type": "firebot:randomeffect",
+                                "active": true,
+                                "effectList": {
+                                    "id": "eab30223-2bd5-4948-a546-435b0a6f0a3d",
+                                    "list": [
+                                        {
+                                            "id": "8600b52f-dd30-4d09-9dab-d5a84c7a0b13",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 3,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\wth_are_ya_talkin_about.mp3",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "67200c4b-854a-4878-b54a-4e4fac00f7f7",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 3,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\wtf_are_you_talking_about.mp3",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "3508d55f-17be-4317-9940-7f4994f05129",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 3,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\what_are_you_talking_about_man.mp3",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "4ab60771-4179-46ed-9730-4fb033fead90",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 3,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\hbomberguy_wth_are_you_talking_about.mp3",
+                                            "percentWeight": null
+                                        }
+                                    ],
+                                    "runMode": "random"
+                                },
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "ff07c6d3-3413-4409-ad09-943824c11641",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(FirstTimeHUH)\\b)"
+                            }
+                        ]
+                    },
+                    "id": "fbe0c6f8-6790-4d47-9424-895cd9b07fa4",
+                    "customCooldown": true,
+                    "customCooldownPerUser": true,
+                    "customCooldownSecs": 2
+                },
+                {
+                    "name": "Emote hamstosis",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "6878de86-c374-4eac-add1-a4afa93eb49a",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "05acaa6f-320d-4f84-ae9a-260f17ee40e3",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "6bb98b70-57b0-45b8-a0aa-a4129b92906c",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 3,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\mitosis.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "1bc76f12-14ff-4edf-a320-2000846fb56d",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(hamstosis)\\b)"
+                            }
+                        ]
+                    },
+                    "id": "bae20ab3-ae56-447f-8149-b123dfbe7398",
+                    "customCooldown": true,
+                    "customCooldownPerUser": true,
+                    "customCooldownSecs": 2
+                },
+                {
+                    "name": "Emote GLORPSHIT",
+                    "active": true,
+                    "cached": true,
+                    "sortTags": [],
+                    "eventId": "chat-message",
+                    "sourceId": "twitch",
+                    "effects": {
+                        "list": [
+                            {
+                                "id": "7c138350-4128-4d81-a4f2-302cc2004035",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is greater than",
+                                                    "value": null,
+                                                    "leftSideValue": "$evalJs[``return new Set($chatMessageEmoteNames).size``]",
+                                                    "rightSideValue": "5"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "fef29bac-2e50-48b2-9a6a-14953e72cc57",
+                                            "list": [
+                                                {
+                                                    "id": "0b628d73-64d3-48a3-b0f7-3290bd766bbb",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "43f2ccac-6a18-4fad-8a01-2eae2b9a2855",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Spam prevention"
+                            },
+                            {
+                                "id": "c5522c50-2c41-4fb1-9d21-27ca07440c5d",
+                                "type": "firebot:conditional-effects",
+                                "active": true,
+                                "ifs": [
+                                    {
+                                        "conditionData": {
+                                            "mode": "exclusive",
+                                            "conditions": [
+                                                {
+                                                    "type": "firebot:custom",
+                                                    "comparisonType": "is",
+                                                    "value": null,
+                                                    "leftSideValue": "$isSharedChatMessage",
+                                                    "rightSideValue": "true"
+                                                }
+                                            ]
+                                        },
+                                        "effectData": {
+                                            "id": "d2c86de8-516e-44ca-9f15-8ae6ddefc416",
+                                            "list": [
+                                                {
+                                                    "id": "9f0d700d-3fec-413a-9ae9-600a9aa3d29d",
+                                                    "type": "firebot:stop-effect-execution",
+                                                    "active": true,
+                                                    "target": "currentList",
+                                                    "bubbleStop": true,
+                                                    "percentWeight": null
+                                                }
+                                            ],
+                                            "runMode": "all"
+                                        }
+                                    }
+                                ],
+                                "otherwiseEffectData": {
+                                    "id": "91aca5d0-8f41-40f7-a7e8-0e2b339e07f9",
+                                    "list": [],
+                                    "runMode": "all"
+                                },
+                                "percentWeight": null,
+                                "effectLabel": "Shared chat check"
+                            },
+                            {
+                                "id": "31f3fc54-7079-44f8-b094-10a74b8c77a1",
+                                "type": "firebot:playsound",
+                                "active": true,
+                                "soundType": "local",
+                                "volume": 6,
+                                "audioOutputDevice": {
+                                    "label": "App Default",
+                                    "deviceId": ""
+                                },
+                                "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\smashing-table-gumball.mp3",
+                                "percentWeight": null
+                            }
+                        ],
+                        "id": "a6b88b2d-3e80-482f-b26c-ec0e6ee36ad9",
+                        "runMode": "all"
+                    },
+                    "filterData": {
+                        "mode": "inclusive",
+                        "filters": [
+                            {
+                                "type": "firebot:message-text",
+                                "comparisonType": "matches regex",
+                                "value": "( |^)(\\b(GLORPSHIT)\\b)"
+                            }
+                        ]
+                    },
+                    "id": "85179f05-c1dd-490a-bf0e-d6801cc003e5",
+                    "customCooldown": true,
+                    "customCooldownPerUser": true,
+                    "customCooldownSecs": 2
+                }
+            ]
+        }
+    },
+    "mainEvents": [
+        {
+            "name": "Viewer Arrived",
+            "active": true,
+            "cached": true,
+            "sortTags": [],
+            "eventId": "viewer-arrived",
+            "sourceId": "twitch",
+            "effects": {
+                "list": [
+                    {
+                        "id": "5dada52a-a69d-436c-a0f4-23e210c793ba",
+                        "type": "firebot:html",
+                        "active": true,
+                        "enterAnimation": "slideInDownFull",
+                        "exitAnimation": "slideOutDownFull",
+                        "inbetweenAnimation": "none",
+                        "html": "<style>\n  #pfp-arrive {\n  \twidth: 10dvw; height: 10dvw;\n    border-radius: 100%;\n    position: absolute;\n    bottom: -2dvw;\n    left: 0;\n  }\n  #username-arrive {\n    font-family: \"JetBrains Mono\";\n    bottom: 9dvw;\n    width: 100dvw;\n    text-align: left;\n    font-size: 28px;\n    font-weight: bold;\n  }\n  \n</style>\n<img id=\"pfp-arrive\" src=\"$userProfileImageUrl\"/>\n<div id=\"username-arrive\" style=\"color:$chatUserColor\">$userDisplayName</div>",
+                        "length": "4",
+                        "enterDuration": "1s",
+                        "exitDuration": "1s",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "aaf95d39-c489-4045-83a1-08447cdddb24",
+                        "type": "firebot:delay",
+                        "active": true,
+                        "delay": "1",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "74db217a-3a55-4a43-971b-befa785e3a06",
+                        "type": "firebot:playsound",
+                        "active": true,
+                        "soundType": "local",
+                        "volume": 8,
+                        "audioOutputDevice": {
+                            "label": "App Default",
+                            "deviceId": ""
+                        },
+                        "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\roblox-hi-sound.mp3",
+                        "percentWeight": null
+                    },
+                    {
+                        "id": "8859c2fe-ae0a-408a-b675-993535eb7a9e",
+                        "type": "firebot:activity-feed-alert",
+                        "active": true,
+                        "icon": "fal fa-hand-peace",
+                        "message": "$userDisplayName appeared",
+                        "percentWeight": null
+                    }
+                ],
+                "id": "fc046329-5493-4256-a7f8-5430919fc889",
+                "runMode": "all"
+            },
+            "filterData": {
+                "mode": "exclusive",
+                "filters": [
+                    {
+                        "type": "firebot:username",
+                        "comparisonType": "is not",
+                        "value": "gibbdev"
+                    },
+                    {
+                        "type": "firebot:username",
+                        "comparisonType": "is not",
+                        "value": "gibbles_bot"
+                    },
+                    {
+                        "type": "firebot:username",
+                        "comparisonType": "is not",
+                        "value": "mud_punk"
+                    },
+                    {
+                        "type": "firebot:username",
+                        "comparisonType": "is not",
+                        "value": "babarabu"
+                    }
+                ]
+            },
+            "id": "0f7b4bd4-1c08-4e76-a442-97f3e1d8e477"
+        },
+        {
+            "name": "Viewer Arrived (custom)",
+            "active": true,
+            "cached": true,
+            "sortTags": [],
+            "eventId": "viewer-arrived",
+            "sourceId": "twitch",
+            "effects": {
+                "list": [
+                    {
+                        "id": "3b399b3d-f00e-41ab-997f-bdfc00414951",
+                        "type": "firebot:conditional-effects",
+                        "active": true,
+                        "ifs": [
+                            {
+                                "conditionData": {
+                                    "mode": "exclusive",
+                                    "conditions": [
+                                        {
+                                            "type": "firebot:username",
+                                            "comparisonType": "is",
+                                            "rightSideValue": "mud_punk"
+                                        }
+                                    ]
+                                },
+                                "effectData": {
+                                    "list": [
+                                        {
+                                            "id": "dd22e526-f73f-4b92-9e5d-7871c0a98311",
+                                            "type": "firebot:playsound",
+                                            "active": true,
+                                            "soundType": "local",
+                                            "volume": 8,
+                                            "audioOutputDevice": {
+                                                "label": "App Default",
+                                                "deviceId": ""
+                                            },
+                                            "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\mudpunk coming at ya.mp3",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "86fa428d-4da1-4a21-a3b2-f0eab192e921",
+                                            "type": "firebot:delay",
+                                            "active": true,
+                                            "delay": "1",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "563d9b72-7fdf-424b-acd3-7ecaad515388",
+                                            "type": "firebot:html",
+                                            "active": true,
+                                            "enterAnimation": "slideInDownFull",
+                                            "exitAnimation": "slideOutDownFull",
+                                            "inbetweenAnimation": "none",
+                                            "html": "<style>\n  #pfp-arrive {\n  \twidth: 10dvw; height: 10dvw;\n    border-radius: 100%;\n    position: absolute;\n    bottom: -2dvw;\n    left: 0;\n  }\n  #username-arrive {\n    font-family: \"JetBrains Mono\";\n    bottom: 9dvw;\n    width: 100dvw;\n    text-align: left;\n    font-size: 28px;\n    font-weight: bold;\n  }\n  \n</style>\n<img id=\"pfp-arrive\" src=\"$userProfileImageUrl\"/>\n<div id=\"username-arrive\" style=\"color:$chatUserColor\">$userDisplayName</div>",
+                                            "length": "4",
+                                            "enterDuration": "1s",
+                                            "exitDuration": "1s",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "cae379fc-d69d-4815-9706-203bea265ec2",
+                                            "type": "firebot:activity-feed-alert",
+                                            "active": true,
+                                            "icon": "fal fa-hand-peace",
+                                            "message": "Mud_punk is here...",
+                                            "percentWeight": null
+                                        }
+                                    ],
+                                    "id": "f9085a9f-9cee-4be5-b866-b66cc7bbe277",
+                                    "runMode": "all"
+                                },
+                                "$$hashKey": "object:583"
+                            },
+                            {
+                                "conditionData": {
+                                    "mode": "exclusive",
+                                    "conditions": [
+                                        {
+                                            "type": "firebot:username",
+                                            "comparisonType": "is",
+                                            "rightSideValue": "babarabu"
+                                        }
+                                    ]
+                                },
+                                "effectData": {
+                                    "id": "27fcb6bb-5dc2-47ff-9733-2128d8899a5b",
+                                    "list": [
+                                        {
+                                            "id": "9874e86b-be98-48ba-aede-c1da0c102fd5",
+                                            "type": "firebot:randomeffect",
+                                            "active": true,
+                                            "effectList": {
+                                                "id": "de3a61bd-0ad8-44b0-9c0e-0d33f5be1dbc",
+                                                "list": [
+                                                    {
+                                                        "id": "297a69ac-6362-4fd8-8018-e55ef9217a24",
+                                                        "type": "firebot:playsound",
+                                                        "active": true,
+                                                        "soundType": "local",
+                                                        "volume": 5,
+                                                        "audioOutputDevice": {
+                                                            "label": "App Default",
+                                                            "deviceId": ""
+                                                        },
+                                                        "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\baba_1.wav",
+                                                        "percentWeight": null
+                                                    },
+                                                    {
+                                                        "id": "940dd840-9722-4203-918d-277da27715c4",
+                                                        "type": "firebot:playsound",
+                                                        "active": true,
+                                                        "soundType": "local",
+                                                        "volume": 5,
+                                                        "audioOutputDevice": {
+                                                            "label": "App Default",
+                                                            "deviceId": ""
+                                                        },
+                                                        "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\baba_2.wav",
+                                                        "percentWeight": null
+                                                    },
+                                                    {
+                                                        "id": "5bc75c12-4b03-4243-bea9-14958745e76d",
+                                                        "type": "firebot:playsound",
+                                                        "active": true,
+                                                        "soundType": "local",
+                                                        "volume": 5,
+                                                        "audioOutputDevice": {
+                                                            "label": "App Default",
+                                                            "deviceId": ""
+                                                        },
+                                                        "filepath": "C:\\Users\\gibb\\Assets\\streaming\\sounds\\baba_3.wav",
+                                                        "percentWeight": null
+                                                    }
+                                                ],
+                                                "runMode": "random"
+                                            },
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "f705d9d0-b42d-4a66-bbbb-e2a4a151ee90",
+                                            "type": "firebot:delay",
+                                            "active": true,
+                                            "delay": "1",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "3c22e661-625f-46d7-b353-4978c865e0f2",
+                                            "type": "firebot:html",
+                                            "active": true,
+                                            "enterAnimation": "slideInDownFull",
+                                            "exitAnimation": "slideOutDownFull",
+                                            "inbetweenAnimation": "none",
+                                            "html": "<style>\n  #pfp-arrive {\n  \twidth: 10dvw; height: 10dvw;\n    border-radius: 100%;\n    position: absolute;\n    bottom: -2dvw;\n    left: 0;\n  }\n  #username-arrive {\n    font-family: \"JetBrains Mono\";\n    bottom: 9dvw;\n    width: 100dvw;\n    text-align: left;\n    font-size: 28px;\n    font-weight: bold;\n  }\n  \n</style>\n<img id=\"pfp-arrive\" src=\"$userProfileImageUrl\"/>\n<div id=\"username-arrive\" style=\"color:$chatUserColor\">$userDisplayName</div>",
+                                            "length": "4",
+                                            "enterDuration": "1s",
+                                            "exitDuration": "1s",
+                                            "percentWeight": null
+                                        },
+                                        {
+                                            "id": "35eb68a2-cac5-4445-9a53-4393393db3a4",
+                                            "type": "firebot:activity-feed-alert",
+                                            "active": true,
+                                            "icon": "fal fa-hand-peace",
+                                            "message": "Baba is Rabu",
+                                            "percentWeight": null
+                                        }
+                                    ],
+                                    "runMode": "all"
+                                },
+                                "$$hashKey": "object:743"
+                            }
+                        ],
+                        "otherwiseEffectData": {
+                            "list": [],
+                            "id": "9108e0a7-795b-4fc7-aeda-c67c74acd6d8",
+                            "runMode": "all"
+                        },
+                        "percentWeight": null
+                    }
+                ],
+                "id": "9e8ab02b-4c40-4562-be92-60a1712d6f1b",
+                "runMode": "all"
+            },
+            "filterData": {
+                "mode": "exclusive",
+                "filters": []
+            },
+            "id": "b090340e-a178-4828-b1a4-1c6dad5708bf"
+        },
+        {
+            "name": "Combo",
+            "active": true,
+            "cached": true,
+            "sortTags": [],
+            "eventId": "chat-message",
+            "sourceId": "twitch",
+            "effects": {
+                "list": [
+                    {
+                        "id": "ba8ca543-5894-414f-b792-8de01476597a",
+                        "type": "firebot:customvariable",
+                        "active": true,
+                        "ttl": 5,
+                        "name": "comboWords",
+                        "variableData": "\"$evalJs[``return $regexExec[$chatMessage, ^()\\w*][0]``]\": {\n  \t\"repeats\":$evalJs[``return $customVariable[comboWords, $evalJs[``return $regexExec[$chatMessage, ^()\\w*][0]``].repeats] + 1``],\n\t\"timestamp\":$evalJs[``return new Date().getTime()``]\n\t}",
+                        "percentWeight": null,
+                        "propertyPath": ""
+                    }
+                ],
+                "id": "3f308b23-8a73-4fe4-aa85-500b85d5c97b",
+                "runMode": "all"
+            },
+            "filterData": {
+                "mode": "exclusive",
+                "filters": [
+                    {
+                        "type": "firebot:username",
+                        "comparisonType": "is not",
+                        "value": "gibbles_bot"
+                    }
+                ]
+            },
+            "id": "8a73cbc1-bd39-4506-9395-bf3eb61b4ec2"
+        },
+        {
+            "name": "Custom Variable Created",
+            "active": false,
+            "cached": true,
+            "sortTags": [],
+            "eventId": "custom-variable-set",
+            "sourceId": "firebot",
+            "filterData": {
+                "mode": "exclusive",
+                "filters": []
+            },
+            "effects": {
+                "id": "a67d2f29-aaad-4757-a8ef-fcd13c58a3f0",
+                "list": [
+                    {
+                        "id": "d62b2c1a-fd65-4aec-a4ef-638b45c107db",
+                        "type": "firebot:chat",
+                        "active": true,
+                        "chatter": "Bot",
+                        "message": "$customVariable[comboWords]",
+                        "percentWeight": null
+                    }
+                ],
+                "runMode": "all"
+            },
+            "id": "dfdc07a3-2a1d-4de3-bb0c-324d498dbb22"
+        }
+    ]
+}
