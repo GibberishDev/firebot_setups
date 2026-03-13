@@ -1282,10 +1282,10 @@
             "id": "29c5f7bb-9b8c-4ae1-8cb1-7baa44055621",
             "createdBy": "gibbdev",
             "createdAt": "2025-10-10T23:08:17.970+03:00",
-            "count": 9,
+            "count": 10,
             "type": "custom",
             "lastEditBy": "gibbdev",
-            "lastEditAt": "2026-02-04T17:45:52.966+03:00"
+            "lastEditAt": "2026-03-13T18:24:03.755+03:00"
         },
         "765c42b5-4206-43f9-8df1-f625752d859e": {
             "active": false,
@@ -1295,36 +1295,8 @@
             "cooldown": {},
             "effects": {
                 "id": "7f9d778e-5261-4642-8498-8f58b2a0ec2a",
-                "list": [
-                    {
-                        "id": "2a56ad30-2252-4211-8943-649dbbcd26cf",
-                        "type": "firebot:conditional-effects",
-                        "active": true,
-                        "ifs": [
-                            {
-                                "conditionData": {
-                                    "mode": "exclusive",
-                                    "conditions": [
-                                        {
-                                            "type": "firebot:username",
-                                            "comparisonType": "is",
-                                            "rightSideValue": "gibbdev"
-                                        }
-                                    ]
-                                },
-                                "effectData": {
-                                    "list": [],
-                                    "id": "6bb2cee5-6159-415a-badc-93ba22b438f1"
-                                }
-                            }
-                        ],
-                        "otherwiseEffectData": {
-                            "list": [],
-                            "id": "39cc219f-74a7-4ceb-a42b-8308345dce28"
-                        },
-                        "percentWeight": null
-                    }
-                ]
+                "list": [],
+                "runMode": "all"
             },
             "restrictionData": {
                 "restrictions": [],
@@ -1345,7 +1317,8 @@
             "count": 0,
             "type": "custom",
             "lastEditBy": "gibbdev",
-            "lastEditAt": "2026-02-04T15:27:49.244+03:00"
+            "lastEditAt": "2026-03-12T22:24:57.496+03:00",
+            "sendCooldownMessageAsReply": true
         },
         "e3473d1d-3ae1-4faa-ac16-16c333cbc1b5": {
             "active": true,

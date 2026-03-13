@@ -2087,68 +2087,6 @@
                 "filters": []
             },
             "id": "b090340e-a178-4828-b1a4-1c6dad5708bf"
-        },
-        {
-            "name": "Combo",
-            "active": true,
-            "cached": true,
-            "sortTags": [],
-            "eventId": "chat-message",
-            "sourceId": "twitch",
-            "effects": {
-                "list": [
-                    {
-                        "id": "ba8ca543-5894-414f-b792-8de01476597a",
-                        "type": "firebot:customvariable",
-                        "active": true,
-                        "ttl": 5,
-                        "name": "comboWords",
-                        "variableData": "\"$evalJs[``return $regexExec[$chatMessage, ^()\\w*][0]``]\": {\n  \t\"repeats\":$evalJs[``return $customVariable[comboWords, $evalJs[``return $regexExec[$chatMessage, ^()\\w*][0]``].repeats] + 1``],\n\t\"timestamp\":$evalJs[``return new Date().getTime()``]\n\t}",
-                        "percentWeight": null,
-                        "propertyPath": ""
-                    }
-                ],
-                "id": "3f308b23-8a73-4fe4-aa85-500b85d5c97b",
-                "runMode": "all"
-            },
-            "filterData": {
-                "mode": "exclusive",
-                "filters": [
-                    {
-                        "type": "firebot:username",
-                        "comparisonType": "is not",
-                        "value": "gibbles_bot"
-                    }
-                ]
-            },
-            "id": "8a73cbc1-bd39-4506-9395-bf3eb61b4ec2"
-        },
-        {
-            "name": "Custom Variable Created",
-            "active": false,
-            "cached": true,
-            "sortTags": [],
-            "eventId": "custom-variable-set",
-            "sourceId": "firebot",
-            "filterData": {
-                "mode": "exclusive",
-                "filters": []
-            },
-            "effects": {
-                "id": "a67d2f29-aaad-4757-a8ef-fcd13c58a3f0",
-                "list": [
-                    {
-                        "id": "d62b2c1a-fd65-4aec-a4ef-638b45c107db",
-                        "type": "firebot:chat",
-                        "active": true,
-                        "chatter": "Bot",
-                        "message": "$customVariable[comboWords]",
-                        "percentWeight": null
-                    }
-                ],
-                "runMode": "all"
-            },
-            "id": "dfdc07a3-2a1d-4de3-bb0c-324d498dbb22"
         }
     ]
 }

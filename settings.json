@@ -2,7 +2,7 @@
     "settings": {
         "legacySortTagsImported": true,
         "firstTimeUse": false,
-        "defaultTtsVoiceId": {},
+        "defaultTtsVoiceId": "Microsoft David - English (United States)",
         "audioOutputDevice": {
             "label": "Send To Overlay",
             "deviceId": "overlay"
@@ -58,9 +58,7 @@
         "chatCompactMode": true,
         "chatCustomFontFamilyEnabled": true,
         "useOverlayInstances": true,
-        "overlayInstances": [
-            "chatCombo"
-        ],
+        "overlayInstances": [],
         "justUpdated": false,
         "eventSetSettings": {
             "74229c87-709f-4b05-9688-ce8b13fb091a": {
@@ -69,6 +67,7 @@
         },
         "chatCustomFontSize": 17,
         "chatGetAllEmotes": true,
-        "runCustomScripts": true
+        "runCustomScripts": true,
+        "clearCustomScriptCache": true
     }
 }
